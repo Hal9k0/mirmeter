@@ -1,1 +1,1 @@
-"""MIR Meter display."""
+"""MIR meter customer display."""

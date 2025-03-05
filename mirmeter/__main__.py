@@ -1,4 +1,4 @@
-"""Provide a CLI for MIRMeter display."""
+"""Provide a CLI for MIR meter customer display."""
 
 import argparse
 import asyncio
@@ -6,7 +6,7 @@ import logging
 import sys
 
 from bleak import BleakScanner
-from .mirmeter import MIRMeter
+from .client import MIRMeter
 
 _LOGGER = logging.getLogger(__package__)
 _LOGGER.setLevel(logging.DEBUG)
@@ -23,10 +23,10 @@ async def cli() -> None:
     else:
         args = parser.parse_args()
 
-        mirmeter = MIRMeter(BleakScanner, args.device, int(args.pin))
-        if await mirmeter.find_device():
-            if await mirmeter.check_pin():
-                await mirmeter.get_data()
+        meter = MIRMeter(BleakScanner, args.device, int(args.pin))
+        if await meter.find_device():
+            if await meter.check_pin():
+                await meter.get_data()
             else:
                 print("An incorrect PIN code or meter has blocked you for a while")
         else:

@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mirmeter"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Hal9k", email="mir@hal9k.ru" },
 ]
-description = "MIR Meter consumer display emulator"
+description = "MIR meter customer display"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
